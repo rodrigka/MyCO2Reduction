@@ -79,6 +79,12 @@ body{
     font-weight: 700;
 }
 
+.IAElink{
+    vertical-align: middle;
+    height: 50px;
+    padding: 10px;
+}
+
 .point{
     color: var(--green1);
 }
@@ -538,18 +544,18 @@ body{
     width: 100%;
 }
 
-.politica__privacidad{
+.politic__privacy{
     color: inherit;
     text-decoration: none;
     display: inline-block;
     margin-top: 10px;
 }
 
-.politica__privacidad:hover{
+.politic__privacy:hover{
     text-decoration: underline;
 }
 
-.politica__privacidad--margin{
+.politic__privacy--margin{
     margin-right: 10px;
 }
 

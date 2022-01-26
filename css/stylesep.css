@@ -91,6 +91,12 @@ main{
     font-weight: 700;
 }
 
+.IAElink{
+    vertical-align: middle;
+    height: 50px;
+    padding: 10px;
+}
+
 .point{
     color: var(--green1);
 }
@@ -103,14 +109,42 @@ main{
     padding:0;
 }
 
-.box__back{
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    background-color:var(--blue);
+.box__back-login{
+    width: 45%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: whitesmoke;
     border-radius: 10px;
-    box-shadow: 0 0 6px var(--color_shadow)
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0 6px var(--color_shadow);
+}
+
+.box__back-textlog{
+    text-align: left;
+    line-height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: auto;
+}
+
+.box__back-register{
+    width: 45%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0 6px var(--color_shadow);
+}
+
+.box__back-textreg{
+    text-align: left;
+    line-height: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: auto;
 }
 
 .box__back div{
@@ -119,37 +153,18 @@ main{
     transition: all 500ms;
 }
 
-
-.box__back div p,
-.box__back button{
-    margin-top: 30px;
-}
-
-.box__back div h3{
-    font-weight: 400;
-    font-size: 26px;
-}
-
-.box__back div p{
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.box__back button{
-    padding: 10px 40px;
-    border: 2px solid #fff;
-    font-size: 14px;
-    background: transparent;
-    font-weight: 600;
+.box__back-login button{
+    padding: 10px 15px;
+    display: inline-block;
+    background: linear-gradient(180deg, var(--blue) 0%, var(--green3) 100%);
+    text-decoration:none;
     cursor: pointer;
     color: white;
-    outline: none;
-    transition: all 300ms;
-}
-
-.box__back button:hover{
-    background: #fff;
-    color: var(--blue);
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: 700;
+    box-shadow: var(--shadow) var(--color_shadow);
+    border-radius: 6px;
+    border: none;
 }
 
 /*forms*/
@@ -163,7 +178,7 @@ main{
     position: relative;
     top: -185px; left: 700px;
 
-    /*La transicion va despues del codigo JS*/
+    /*La transition va après le JS*/
     transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
@@ -201,10 +216,13 @@ main{
     cursor: pointer;
     background: linear-gradient(180deg, #ffffff 0%, #f5faf5 100%);
     text-decoration: none;
+    font-family: 'Signika Negative', sans-serif;
     color: var(--blue);
     font-weight: 700;
     box-shadow: var(--shadow) var(--color_shadow);
     border-radius: 6px;
+    border: none;
+    
 }
 
 .form__login{
@@ -212,7 +230,8 @@ main{
     display: block;
 }
 .form__register{
-    display: none;
+    opacity: 1;
+    display: block;
 }
 
 
