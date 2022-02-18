@@ -35,14 +35,14 @@
                     <div class="box__back-textlog">
                         <h3>Avez vous déjà un compte?</h3>
                         <p>Connectez-vous pour entrer dans votre espace personnel</p>
-                        <button id="btn__session">Se connecter</button>
+                        <button onclick="affichage()" id="btn__session">Se connecter</button>
                     </div>
                 </div>
                 <div class="box__back-register">
                     <div class="box__back-textreg"></div>
                         <h3>Vous n'avez toujours pas un compte?</h3>
                         <p>Enregistrez-vous pour pouvoir vous connecter</p>
-                        <button id="btn__register">S'enregistrer</button>
+                        <button onclick="affichage()" id="btn__register">S'enregistrer</button>
                     </div>
                 </div>
             </div>
@@ -50,22 +50,27 @@
             <!--Login & registre-->
             <div class="container__login-register">
                 <!--Login-->
-                <form action="" class="form__login">
-                    <h2>Se connecter</h2>
-                    <input type="text" placeholder="Email">
-                    <input type="password" placeholder="Mot de passe">
-                    <button>Entrer</button>
-                </form>
+                <div id="loginDIV" style="display:none;">
+                    <form action="" class="form__login">
+                        <h2>Se connecter</h2>
+                        <input type="text" placeholder="Email">
+                        <input type="password" placeholder="Mot de passe">
+                        <button>Entrer</button>
+                    </form>
+                </div>
 
                 <!--Register-->
-                <form action="" class="form__register">
-                    <h2>S'enregistrer</h2>
-                    <input type="text" placeholder="Nom">
-                    <input type="text" placeholder="email">
-                    <input type="text" placeholder="user">
-                    <input type="password" placeholder="mot de passe">
-                    <button>S'enregistrer</button>
-                </form>
+                <div id="registerDIV" style="display:none;">
+                    <form action="" class="form__register">
+                        <h2>S'enregistrer</h2>
+                        <input type="text" placeholder="Nom">
+                        <input type="text" placeholder="email">
+                        <input type="text" placeholder="user">
+                        <input type="password" placeholder="mot de passe">
+                        <button>S'enregistrer</button>
+                    </form>
+                </div>
+
             </div>
         </div>
 

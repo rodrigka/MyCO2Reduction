@@ -17,11 +17,7 @@
                 </div>
                 <div class="links">
                     <link rel="icon" type="image/png" sizes="16x16" href="img/logo.jpg">
-                    <a href="Accueil.html" class="link">Page d'acueil</a>
                     <a href="Vlog.html" class="link">Vlog</a>
-                    <a href="Forum.html" class="link">Forum</a>
-                    <a href="Espace-personnel.html" class="link">login / Inscription</a>
-                    <a href="Vlog.html" class="link link--active">Contact</a>
                 </div>
             </div>
         </nav>
@@ -34,7 +30,7 @@
                     Inscrit toi pour relever le défis <span class="copy__active">Avec l'ensemble de professeurs et étudiants de </span> 
                     <a href="https://www.iae.univ-smb.fr/" class="copy__IAE">l'IAE d'annecy !</a>
                 </p>
-                <a href="Espace-personnel.html" class="cta">S'inscrire</a>
+                <a href="Espace-personnel.html" class="cta">Calculer mon empreinte CO2</a>
             </div>
             <img src="img/Logo.png" class="mockup">
             <div>
@@ -109,6 +105,63 @@
                 </div>
                 <div>
                     <img src="img/image3.jpg" class="asso__img">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div>
+                    <h2 class="subtitle">Calculer mon empreinte CO2<span class="point">.</span></h2>
+                    <p class="copy__section">Lorem, ipsum dolor sit amet consectetur ad</p>
+                    <div class="CO2card">
+                        <form action="" class ="CO2_form">
+                            <div class="card__transport">
+                                <label for="transport_select">Moyen de transport :</label>
+                                <select name="Moyen de transport" id="transport_select">
+                                    <option>Voiture
+                                    <option>Covoiturage
+                                    <option>Bus
+                                    <option>Train
+                                    <option>Vélo, à pied...
+                                </select>
+                            </div>
+                            <div class="card__voiture">
+                                <label for="carburant_select">Type de carburant utilisé :</label>
+                                <select name="type de carburant" id="carburant_select">
+                                    <option>Essence
+                                    <option>Diesel
+                                    <option>Electrique
+                                    <option>Ethanol
+                                    <option>Biodiesel
+                                    <option>Hybride
+                                </select> 
+                                <input type="number" placeholder="Consommation moyenne">
+                                <input type="number" placeholder="Nombre de KM parcourrus">
+                            </div>
+                            <div class="card__covoiturage">
+                                <label for="carburant_select">Type de carburant utilisé :</label>
+                                <select name="type de carburant" id="carburant_select">
+                                    <option>Essence
+                                    <option>Diesel
+                                    <option>Electrique
+                                    <option>Ethanol
+                                    <option>Biodiesel
+                                    <option>Hybride
+                                </select> 
+                                <input type="number" placeholder="Consommation moyenne">
+                                <input type="number" placeholder="Nombre de KM parcourrus">
+                                <input type="number" placeholder="Nombre de personnes">
+                            </div>
+                            <div class="card__bus">
+                                <input type="number" placeholder="Nombre de KM parcourrus">
+                            </div>
+                            <div class="card__train">
+                                <input type="number" placeholder="Nombre de KM parcourrus">
+                            </div>
+                            <a href="#" class="CO2card__button">Calculer</a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
