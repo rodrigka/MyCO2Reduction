@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" sizes="16x16" href="img/Logo.png">
+    <script src='js/main.js'></script>
 </head>
 <body>
     <header class="hero">
@@ -17,7 +18,10 @@
                 </div>
                 <div class="links">
                     <link rel="icon" type="image/png" sizes="16x16" href="img/logo.jpg">
-                    <a href="Vlog.html" class="link">Vlog</a>
+                    <a href="#row-articles" class="link">Vlog</a>
+                    <a href="#row-info" class="link">Notre projet</a>
+                    <a href="#row-calcul" class="link">Calcul</a>
+                    <a href="#row-contact" class="link">Contact</a>
                 </div>
             </div>
         </nav>
@@ -30,7 +34,7 @@
                     Inscrit toi pour relever le défis <span class="copy__active">Avec l'ensemble de professeurs et étudiants de </span> 
                     <a href="https://www.iae.univ-smb.fr/" class="copy__IAE">l'IAE d'annecy !</a>
                 </p>
-                <a href="Espace-personnel.html" class="cta">Calculer mon empreinte CO2</a>
+                <a href="#row-calcul" class="cta">Calculer mon empreinte CO2</a>
             </div>
             <img src="img/Logo.png" class="mockup">
             <div>
@@ -41,7 +45,7 @@
     </header>
 
     <main>
-        <section class="articles">
+        <section class="articles" id="row-articles">
             <div class="container">
                 <h2 class="subtitle">Comment reduire notre impreinte carbone ?<span class="point">.</span></h2>
                 <p class="copy__section">Voici quelques articles qui pourraient vous aider </p>
@@ -77,7 +81,7 @@
                 </article>
             </div>
         </section>
-        <section class="info">
+        <section class="info" id="row-info">
             <div class="container">
                 <h2 class="subtitle">A propos<span class="point">.</span></h2>
                 <p class="copy__section">Un groupe de L3-SNGI</p>
@@ -93,14 +97,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-counter">
-                    <div class="counter__card">
-                        <div class="counter__number">
-                            <h2>250</h2>
-                        </div>
-                        <div class="counter__text"
-                            <h3>personnes relèvent actuellement le défis !</h3>
-                        </div>
+                <div class="counter">
+                    <div>
+                        <h1 class="counter__number">250</h1>
+                        <h3 class="counter__text">personnes relèvent actuellement le défis !</h3>
                     </div>
                 </div>
                 <div>
@@ -109,39 +109,39 @@
             </div>
         </section>
 
-        <section>
+        <section class="calcul" id="row-calcul">
             <div class="container">
                 <div>
                     <h2 class="subtitle">Calculer mon empreinte CO2<span class="point">.</span></h2>
                     <p class="copy__section">Lorem, ipsum dolor sit amet consectetur ad</p>
                     <div class="CO2card">
-                        <form action="" class ="CO2_form">
-                            <div class="card__transport">
-                                <label for="transport_select">Moyen de transport :</label>
-                                <select name="Moyen de transport" id="transport_select">
-                                    <option>Voiture
-                                    <option>Covoiturage
-                                    <option>Bus
-                                    <option>Train
-                                    <option>Vélo, à pied...
+                        <form action="" class ="CO2_form" method="post">
+                            <div class="card-transport">
+                                <select name="selectionTransport" id="transport_select" onchange="afficherSelection(this.value);">
+                                    <option value="">Moyen de transport
+                                    <option value="Voiture"> Voiture
+                                    <option value="Covoiturage">Covoiturage
+                                    <option value="Bus">Bus
+                                    <option value="Train">Train
+                                    <option value="Velo, à pied...">Vélo, à pied...
                                 </select>
                             </div>
-                            <div class="card__voiture">
-                                <label for="carburant_select">Type de carburant utilisé :</label>
+                            <div class="card-voiture" id="card-voiture">
                                 <select name="type de carburant" id="carburant_select">
-                                    <option>Essence
-                                    <option>Diesel
-                                    <option>Electrique
-                                    <option>Ethanol
-                                    <option>Biodiesel
-                                    <option>Hybride
+                                    <option value="">Type de carburant
+                                    <option value="Essence">Essence
+                                    <option value="Diesel">Diesel
+                                    <option value="Electrique">Electrique
+                                    <option value="Ethanol">Ethanol
+                                    <option value="Biodiesel">Biodiesel
+                                    <option value="Hybride">Hybride
                                 </select> 
-                                <input type="number" placeholder="Consommation moyenne">
-                                <input type="number" placeholder="Nombre de KM parcourrus">
+                                <input type="number" d="consomoyv" placeholder="Consommation moyenne">
+                                <input type="number" id="nbkmv" placeholder="Nombre de KM parcourrus">
                             </div>
-                            <div class="card__covoiturage">
-                                <label for="carburant_select">Type de carburant utilisé :</label>
+                            <div class="card-covoiturage" id="card-covoiturage">
                                 <select name="type de carburant" id="carburant_select">
+                                    <option value="">Type de carburant
                                     <option>Essence
                                     <option>Diesel
                                     <option>Electrique
@@ -149,24 +149,25 @@
                                     <option>Biodiesel
                                     <option>Hybride
                                 </select> 
-                                <input type="number" placeholder="Consommation moyenne">
-                                <input type="number" placeholder="Nombre de KM parcourrus">
+                                <input type="number" id="consomoyc" placeholder="Consommation moyenne">
+                                <input type="number" id="nbkmc" placeholder="Nombre de KM parcourrus">
                                 <input type="number" placeholder="Nombre de personnes">
                             </div>
-                            <div class="card__bus">
+                            <div class="card-bus" id="card-bus">
                                 <input type="number" placeholder="Nombre de KM parcourrus">
                             </div>
-                            <div class="card__train">
+                            <div class="card-train" id="card-train">
                                 <input type="number" placeholder="Nombre de KM parcourrus">
                             </div>
-                            <a href="#" class="CO2card__button">Calculer</a>
+                            <button type="button" id="calculer">Calculer</button>
+                            <output id="total"></output>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="email container container--modifier">
+        <section class="email container container--modifier" id="row-contact">
             <h2 class="subtitle subtitle--modifier"> Parler des objectifs : ipsum dolor sit, amet consectetur adipisicing elit<span class="point">.</span></h2>
 
             <p class="copy__section copy__section--modifier">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab, et dolore id necessitatibus quibusdam rem accusamus fugiat doloremque voluptatibus eius!</p>

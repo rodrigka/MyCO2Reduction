@@ -26,7 +26,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 15px 0;
+    margin-bottom: 50px;
     height: auto;
 }
 
@@ -145,7 +145,7 @@ body{
 }
 
 .cta{
-    padding: 20px 30px;
+    padding: 15px 15px;
     display: inline-block;
     background: linear-gradient(180deg, #ffffff 0%, #f5faf5 100%);
     text-decoration: none;
@@ -173,8 +173,8 @@ body{
 .copy__section{
     color: var(--blue);
     font-size: 22px;
-    line-height: 32px;
-    margin-bottom: 40px;
+    line-height: 28px;
+    margin-bottom: 10px;
 }
 
 .copy__section--modifier{
@@ -197,7 +197,6 @@ body{
     border-radius: 10px;
     position: relative;
     text-align: right;
-    margin-bottom: 30px;
     box-shadow: 0 0 6px var(--color_shadow);
 }
 
@@ -300,7 +299,6 @@ body{
 }
 
 .aboutUs__card{
-    width: 100%;
     max-width: 340px;
     height: 500px;
     float: left;
@@ -308,21 +306,15 @@ body{
     border-radius: 10px;
     position: relative;
     text-align: left;
-    margin-bottom: 60px;
     box-shadow: 0 0 6px var(--color_shadow);
 }
 
 .aboutUs__copy{
     position: absolute;
     bottom: 20px;
-    left: 5%;
-    width: 90%;
-    background: linear-gradient(180deg, var(--blue) 0%, var(--green3) 100%);
+    width: 100%;
     color: #fff;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: var(--shadow) var(--color_shadow);
-    padding: 15px 8px;
+    padding: 15px 0px;
     display: flex;
     align-items: center;
 }
@@ -355,6 +347,7 @@ body{
 
 .aboutUs__info{
     width: 70%;
+    color: white;
 }
 
 .logo--picture{
@@ -365,14 +358,7 @@ body{
     object-position: center top;
 }
 
-.container-counter{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    flex-wrap: wrap;
-}
-
-.counter__card{
+.counter{
     width: 65%;
     height: 200px;
     width: 750px;
@@ -380,15 +366,15 @@ body{
     margin-left: 55px;
     background: linear-gradient(180deg, var(--blue) 0%, var(--green3) 100%);
     border-radius: 10px;
-    position: relative;
     margin-bottom: 30px;
+    display:flex;
+    align-items: center;
 }
 
 .counter__number{
-    font-size: 150px;
+    font-size: 200px;
     line-height: 120px;
     float:left;
-    padding: 40px 0;
     width: 90%;
     margin: 5 auto;
     color: #fff;
@@ -396,12 +382,9 @@ body{
 
 .counter__text{
     font-size: 36px;
-    bottom: 0px;
-    padding: 40px 0;
     width: 50%;
-    margin: 5px;
+    float: right;
     color: rgb(248, 10, 10);
-    position: relative;
 }
 
 .asso__img{
@@ -420,21 +403,24 @@ body{
     border-width: 20px;
     border-radius: 10px;
     position: relative;
-    text-align: right;
+    text-align: center;
     margin-bottom: 30px;
     box-shadow: 0 0 6px var(--color_shadow);
 }
 
-.CO2card__button{
-    display: inline-block;
+#calculer{
+    display:inline-block;
     background: linear-gradient(180deg, #ffffff 0%, #f5faf5 100%);
     border-radius: 6px;
+    border-style: none;
     text-decoration: none;
     width: 10%;
     color: var(--green3);
-    font-weight: 700;
-    text-align: center;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 15px;
     padding: 12px 0;
+    margin-left: 900px;
+    margin-top: 20px;
 }
 
 .CO2_form input, select{
@@ -448,15 +434,21 @@ body{
     border-radius: 6px;
 }
 
-.card__transport, .card__voiture, .card__covoiturage, .card__bus, .card__train{
+.card-transport, .card-voiture, .card-covoiturage, .card-bus, .card-train{
     text-align: left;
     width: 90%;
     margin:0 auto;
     text-align: center;
 }
 
-.card__voiture, .card__covoiturage, .card__bus, .card__train{
-    position: relative;
+.card-voiture, .card-covoiturage, .card-bus, .card-train{
+    position: absolute;
+    left:0px; top:0px;
+    display:none;
+}
+
+#total{
+    color: red;
 }
 
 /* check */
