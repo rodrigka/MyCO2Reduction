@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="icon" type="image/png" sizes="16x16" href="img/Logo.png">
-    <script src='js/main.js'></script>
 </head>
 <body>
     <header class="hero">
         <nav class="nav__hero">
             <div class="container nav__container">
                 <div class="logo">
-                    <a href="Accueil.html" class="logo__name">My CO2 Reduction<span class="point">.</span></a>
+                    <a href="Accueil.html" class="logo__name" id="logo__name">My CO2 Reduction<span class="point">.</span></a>
                 </div>
                 <div class="links">
                     <link rel="icon" type="image/png" sizes="16x16" href="img/logo.jpg">
@@ -54,27 +53,27 @@
                     <div class="card">
                         <img src="img/image2.jpg" class="card__img">
                         <div class="cards__text">
-                            <p class="card__list">comment ne pas tomber dans la </p>
-                            <h3 class="card__title">"fast-fashion" ?<span class="point">.</span></h3>
-                            <p class="card__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorum sit molestias ipsam at veritatis ut esse eius, dolor est!</p>
-                            <a href="#" class="card__button">Lien vers l'article</a>
+                            <p class="card__list">Limiter l'impact CO2 de nos appareils</p>
+                            <h3 class="card__title">éléctroniques<span class="point">.</span></h3>
+                            <p class="card__copy">Avoir une voiture électrique c’est bien, seulement il faut penser à l’éteindre complètement. Cela en est de même pour tous vos chargeurs d’appareils électronique.</p>
+                            <a href="https://www.comment-economiser.fr/reduire-empreinte-carbone.html " class="card__button">Lien vers l'article</a>
                         </div>
                     </div>
                     <div class="card">
                         <img src="img/image1.jpg" class="card__img">
                         <div class="cards__text">
-                            <p class="card__list">comment réduire la consommation de</p>
-                            <h3 class="card__title">Viande<span class="point">.</span></h3>
-                            <p class="card__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorum sit molestias ipsam at veritatis ut esse eius, dolor est!</p>
+                            <p class="card__list">Limitez vos emisions carbone grace au</p>
+                            <h3 class="card__title">covoiturage<span class="point">.</span></h3>
+                            <p class="card__copy">Le conseil suivant ne vous surprendra surement pas. Faites du covoiturage ! Et divisez par 2, 3 ou même 4 votre empreinte carbone.  </p>
                             <a href="#" class="card__button">Lien vers l'article</a>
                         </div>
                     </div>
                     <div class="card">
                         <img src="img/image3.jpg" class="card__img">
                         <div class="cards__text">
-                            <p class="card__list">Solutions pour un transport</p>
-                            <h3 class="card__title">plus écologique<span class="point">.</span></h3>
-                            <p class="card__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel dolorum sit molestias ipsam at veritatis ut esse eius, dolor est!</p>
+                            <p class="card__list">Astuces bonnes pour le portefeuille</p>
+                            <h3 class="card__title">et la planète<span class="point">.</span></h3>
+                            <p class="card__copy">Plein de petits conseils qui font la difference : changez vos ampoules, buvez l’eau du robinet, fermez vos volets, achetez local, plantez des arbres. </p>
                             <a href="#" class="card__button">Lien vers l'article</a>
                         </div>
                     </div>
@@ -97,12 +96,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="counter">
-                    <div>
-                        <h1 class="counter__number">250</h1>
-                        <h3 class="counter__text">personnes relèvent actuellement le défis !</h3>
-                    </div>
-                </div>
                 <div>
                     <img src="img/image3.jpg" class="asso__img">
                 </div>
@@ -114,54 +107,61 @@
                 <div>
                     <h2 class="subtitle">Calculer mon empreinte CO2<span class="point">.</span></h2>
                     <p class="copy__section">Lorem, ipsum dolor sit amet consectetur ad</p>
-                    <div class="CO2card">
-                        <form action="" class ="CO2_form" method="post">
-                            <div class="card-transport">
-                                <select name="selectionTransport" id="transport_select" onchange="afficherSelection(this.value);">
-                                    <option value="">Moyen de transport
-                                    <option value="Voiture"> Voiture
-                                    <option value="Covoiturage">Covoiturage
-                                    <option value="Bus">Bus
-                                    <option value="Train">Train
-                                    <option value="Velo, à pied...">Vélo, à pied...
-                                </select>
-                            </div>
-                            <div class="card-voiture" id="card-voiture">
-                                <select name="type de carburant" id="carburant_select">
-                                    <option value="">Type de carburant
-                                    <option value="Essence">Essence
-                                    <option value="Diesel">Diesel
-                                    <option value="Electrique">Electrique
-                                    <option value="Ethanol">Ethanol
-                                    <option value="Biodiesel">Biodiesel
-                                    <option value="Hybride">Hybride
-                                </select> 
-                                <input type="number" d="consomoyv" placeholder="Consommation moyenne">
-                                <input type="number" id="nbkmv" placeholder="Nombre de KM parcourrus">
-                            </div>
-                            <div class="card-covoiturage" id="card-covoiturage">
-                                <select name="type de carburant" id="carburant_select">
-                                    <option value="">Type de carburant
-                                    <option>Essence
-                                    <option>Diesel
-                                    <option>Electrique
-                                    <option>Ethanol
-                                    <option>Biodiesel
-                                    <option>Hybride
-                                </select> 
-                                <input type="number" id="consomoyc" placeholder="Consommation moyenne">
-                                <input type="number" id="nbkmc" placeholder="Nombre de KM parcourrus">
-                                <input type="number" placeholder="Nombre de personnes">
-                            </div>
-                            <div class="card-bus" id="card-bus">
-                                <input type="number" placeholder="Nombre de KM parcourrus">
-                            </div>
-                            <div class="card-train" id="card-train">
-                                <input type="number" placeholder="Nombre de KM parcourrus">
-                            </div>
-                            <button type="button" id="calculer">Calculer</button>
-                            <output id="total"></output>
-                        </form>
+                    <div class="CO2card CO2_form"> 
+                        <div class="card-transport">
+                            <select name="selectionTransport" id="transport_select" onchange="afficherSelection(this);">
+                                <option value="">Moyen de transport
+                                <option value="Voiture"> Voiture
+                                <option value="Covoiturage">Covoiturage
+                                <option value="Bus">Bus
+                                <option value="Train">Train
+                                <option value="Velo_pied">Vélo, à pied...
+                            </select>
+                        </div>
+                        <div class="card-voiture" id="card-voiture">
+                            <select name="type de carburant" id="carburant_selectv">
+                                <option value="">Type de carburant
+                                <option value="Essence">Essence
+                                <option value="Diesel">Diesel
+                                <option value="Electrique">Electrique
+                                <option value="Ethanol">Ethanol
+                                <option value="Biodiesel">Biodiesel
+                                <option value="Hybride">Hybride
+                            </select> 
+                            <input type="number" id="consomoyv" placeholder="Consommation moyenne" min="1">
+                            <input type="number" id="nbkmv" placeholder="Nombre de KM parcourrus" min="1">
+                        </div>
+                        <div class="card-covoiturage" id="card-covoiturage">
+                            <select name="type de carburant" id="carburant_selectc">
+                                <option value="">Type de carburant
+                                <option>Essence
+                                <option>Diesel
+                                <option>Electrique
+                                <option>Ethanol
+                                <option>Biodiesel
+                                <option>Hybride
+                            </select> 
+                            <input type="number" id="consomoyc" placeholder="Consommation moyenne" min="1">
+                            <input type="number" id="nbkmc" placeholder="Nombre de KM parcourrus" min="1">
+                            <input type="number" id="nbper" placeholder="Nombre de personnes" min="1" max="5">
+                        </div>
+                        <div class="card-bus" id="card-bus">
+                            <input type="number" id="nbkmb" placeholder="Nombre de KM parcourrus" min="1">
+                        </div>
+                        <div class="card-train" id="card-train">
+                            <input type="number" id="nbkmt" placeholder="Nombre de KM parcourrus" min="1">
+                        </div>
+                        <button type="submit" id="calculer">Calculer</button>
+                        <br>
+                        <div class="result">
+                            <label id="total_label" for="total">Grammes de CO2 par trajet : </label>
+                            <span id="total"></span>
+                            <br>
+                            <label id="total_labelan" for="totalan">Tonnes de CO2 par an : </label>
+                            <span id="totalan"></span>
+                            <br>
+                            <p id="commentaire"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -195,10 +195,6 @@
                     </div>
                 </div>
             </div>
-            <form class="newsletter">
-                <input type="text" class="newsletter__input" placeholder="Entre ton adresse e-mail">
-                <input type="submit" class="newsletter__submit" value="Inscrit-toi à la newsletter">
-            </form>
         </section>
     </main>
 
@@ -249,5 +245,6 @@
             </div>
         </div>
     </footer>
+    <script src='js/main.js'></script>
 </body>
 </html>

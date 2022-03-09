@@ -26,7 +26,7 @@ body{
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     height: auto;
 }
 
@@ -60,10 +60,22 @@ body{
     padding: 0;
 }
 
-.logo__name{
+#logo__name{
     font-size: 24px;
     text-decoration: none;
     color: white;
+    position: relative;
+    animation: logoanim 1s;
+    animation-delay: 0.5s;
+}
+
+#logo__name{animation-timing-function: ease-in-out;}
+
+@keyframes logoanim {
+    from {left: 60px;}
+    to {left: 0px;}
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
 
 .link{
@@ -113,7 +125,12 @@ body{
     font-size: 56px;
     font-weight: 300;
     color: #fff;
+    position: relative;
+    animation: titleanim 1s;
+    animation-delay: 0.5s;
 }
+
+#logo__name{animation-timing-function: ease-in-out;}
 
 .title--active{
     color: var(--green1);
@@ -125,10 +142,22 @@ body{
     color: var(--green2);
     text-shadow: var(--shadow)  var(--color_shadow);
     margin: 15px 0;
+    position: relative;
+    animation: titleanim 1s;
+    animation-delay: 0.5s;
 }
+
+.copy{animation-timing-function: ease-in-out;}
 
 .copy__active{
     font-weight: 700;
+}
+
+@keyframes titleanim {
+    from {top: 60px;}
+    to {top: 0px;}
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
 
 .copy__IAE{
@@ -153,12 +182,17 @@ body{
     font-weight: 700;
     box-shadow: var(--shadow) var(--color_shadow);
     border-radius: 6px;
+    transition: width 1s, height 1s, transform 1s;
+}
+
+.cta:hover {
+    background:rgb(237, 245, 238);
 }
 
 /* Articles */
 
 .articles{
-    background: #fafafa;
+    background-color: white;
 }
 
 .subtitle{
@@ -288,7 +322,7 @@ body{
 }
 
 .info{
-    background: #fafafa;
+    background-color: white;
 }
 
 .info-container{
@@ -358,38 +392,9 @@ body{
     object-position: center top;
 }
 
-.counter{
-    width: 65%;
-    height: 200px;
-    width: 750px;
-    overflow: hidden;
-    margin-left: 55px;
-    background: linear-gradient(180deg, var(--blue) 0%, var(--green3) 100%);
-    border-radius: 10px;
-    margin-bottom: 30px;
-    display:flex;
-    align-items: center;
-}
-
-.counter__number{
-    font-size: 200px;
-    line-height: 120px;
-    float:left;
-    width: 90%;
-    margin: 5 auto;
-    color: #fff;
-}
-
-.counter__text{
-    font-size: 36px;
-    width: 50%;
-    float: right;
-    color: rgb(248, 10, 10);
-}
-
 .asso__img{
     width: 65%;
-    height: 270px;
+    height: 500px;
     object-fit: cover;
     border-radius: 10px;
     margin-left: 55px;
@@ -415,12 +420,18 @@ body{
     border-style: none;
     text-decoration: none;
     width: 10%;
-    color: var(--green3);
+    color:#84b4ee;
     font-family: 'Signika Negative', sans-serif;
     font-size: 15px;
     padding: 12px 0;
     margin-left: 900px;
     margin-top: 20px;
+    transition: width 1s, height 1s, transform 1s;
+    cursor: pointer;
+}
+
+#calculer:hover {
+    background:rgb(237, 245, 238);
 }
 
 .CO2_form input, select{
@@ -447,8 +458,9 @@ body{
     display:none;
 }
 
-#total{
-    color: red;
+.result{
+    color:#238017;
+    
 }
 
 /* check */
@@ -529,7 +541,7 @@ body{
 
 
 .footer{
-    background: #fafafa;
+    background-color: white;
 }
 
 .footer__caption{
@@ -655,6 +667,10 @@ body{
     font-size: 16px;
     line-height: 20px;
 }
+
+/*
+ *Adaptiation a plusieurs écrans à finir
+ */
 
 @media screen and (max-width:900px){
     .mockup{
