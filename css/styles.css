@@ -11,6 +11,10 @@
     --color_shadow: #56615533;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding:0;
@@ -334,7 +338,7 @@ body{
 
 .aboutUs__card{
     max-width: 340px;
-    height: 500px;
+    height: 470px;
     float: left;
     background: linear-gradient(180deg, var(--blue) 0%, var(--green3) 100%);
     border-radius: 10px;
@@ -394,7 +398,7 @@ body{
 
 .asso__img{
     width: 65%;
-    height: 500px;
+    height: 470px;
     object-fit: cover;
     border-radius: 10px;
     margin-left: 55px;
@@ -460,7 +464,6 @@ body{
 
 .result{
     color:#238017;
-    
 }
 
 /* check */

@@ -1,6 +1,15 @@
 
 //FONCTIONS
 
+
+// $(document).ready(function(){
+//     $("a").on('click', function(event){
+
+//     }
+// }
+
+
+
 function afficherSelection() {
     var selection = document.getElementById("transport_select").value;
 
@@ -98,9 +107,9 @@ btn.addEventListener('click',() => {
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2000 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
 
-        if (totalan < 2000){
+        if (totalan < 2){
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
@@ -131,12 +140,12 @@ btn.addEventListener('click',() => {
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2000 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
 
-        if (totalan < 2000){
+        if (totalan < 2){
         document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
         
@@ -145,12 +154,12 @@ btn.addEventListener('click',() => {
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2000 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
 
-        if (totalan < 2000){
+        if (totalan < 2){
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
     } else if (selection == 'Train'){
@@ -158,16 +167,24 @@ btn.addEventListener('click',() => {
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2000 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
 
-        if (totalan < 2000){
+        if (totalan < 2){
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
     } else if (selection == 'Velo_pied') { 
-        document.querySelector('#total').innerHTML = 'Genial tu auras un super fessier pour cet été !!!'
+        document.querySelector('#total').style.display="none";
+        document.querySelector('#total_labelan').style.display="none";
+        document.querySelector('#total_label').style.display="none";
+        document.querySelector('#totalan').style.display="none";
+        document.querySelector('#commentaire').innerHTML = 'Genial ! ton impact CO2 est nul, et en plus tu auras un super fessier pour cet été !!!';
+
+    }else if (selection == ''){
+        alert('Veuillez choisir un moyen de transport');
+        document.querySelector('#total').style.display="none";
         document.querySelector('#total_labelan').style.display="none";
         document.querySelector('#total_label').style.display="none";
         document.querySelector('#totalan').style.display="none";
