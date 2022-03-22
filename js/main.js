@@ -1,15 +1,6 @@
 
 //FONCTIONS
 
-
-// $(document).ready(function(){
-//     $("a").on('click', function(event){
-
-//     }
-// }
-
-
-
 function afficherSelection() {
     var selection = document.getElementById("transport_select").value;
 
@@ -20,6 +11,7 @@ function afficherSelection() {
     document.querySelector('#totalan').style.display="none";
     document.querySelector('#commentaire').style.display="none";
 
+    //Afichage des divs en fonction de la selection du moyen de transport
     if (selection =="") {
         document.getElementById('card-voiture').style.display="none";
         document.getElementById('card-covoiturage').style.display="none";
@@ -75,23 +67,25 @@ btn.addEventListener('click',() => {
     var totalan;
     var reste;
 
-    //Afficher les resultats
+    //Afficher les divs des resultats
     document.getElementById('total_label').style.display="contents";
     document.getElementById('total_labelan').style.display="contents";
     document.querySelector('#total').style.display="contents"
     document.querySelector('#totalan').style.display="contents";
     document.querySelector('#commentaire').style.display="contents";
 
+    //Selection du moyen de transport : Voiture
     if (selection == 'Voiture') { 
         if(carburantv == ''){
-            //Cacher les resultats : faux car pas de selection sur le carburant
+            //Cacher les resultats : pas de selection sur le carburant
             alert("Veuillez selectionner un moyen de transport.")
             document.querySelector('#total').style.display="none"
             document.querySelector('#total_labelan').style.display="none";
             document.querySelector('#total_label').style.display="none";
             document.querySelector('#totalan').style.display="none";
             document.querySelector('#commentaire').style.display="none";
-        } else if (carburantv =="Essence"){
+            //Calcul en fonction du carburant selectionné
+        }else if (carburantv =="Essence"){
             total = Math.round(((2317 * Math.abs(consomoyv.value)) /100 )* Math.abs(nbkmv.value));
         }else if(carburantv =="Diesel"){
             total = Math.round(((2729 * Math.abs(consomoyv.value)) /100 )* Math.abs(nbkmv.value));
@@ -102,29 +96,33 @@ btn.addEventListener('click',() => {
         }else if(carburantv =="Biodiesel"){
             total = Math.round(((2472 * Math.abs(consomoyv.value)) /100 )* Math.abs(nbkmv.value));
         }else if(carburantv =="Hybride"){
-            total = Math.round(200 * Math.abs(consomoyv.value) * Math.abs(nbkmv.value));
+            total = Math.round((((2317 * Math.abs(consomoyv.value)) /100 )* Math.abs(nbkmv.value))*0.7);
         }
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
-        if (totalan < 2){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+        // Contenu du commentaire en fonction des tonnes de CO2 par an.
+        if (totalan < 3){
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
+            document.querySelector('#commentaire').style.color = "red";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
         }
 
+    //Selection du moyen de transport : Covoiturage
     } else if (selection == 'Covoiturage'){
         if(carburantc == ''){
-            //Cacher les resultats : faux car pas de selection sur le carburant
+            //Cacher les resultats : pas de selection sur le carburant
             alert("Veuillez selectionner un moyen de transport.")
             document.querySelector('#total').style.display="none"
             document.querySelector('#total_labelan').style.display="none";
             document.querySelector('#total_label').style.display="none";
             document.querySelector('#totalan').style.display="none";
             document.querySelector('#commentaire').style.display="none";
-        } else if (carburantc =="Essence"){
+            //Calcul en fonction du carburant selectionné
+        }else if (carburantc =="Essence"){
             total = Math.round((((2317 * Math.abs(consomoyc.value)) /100 )* Math.abs(nbkmc.value))/ Math.abs(nbper.value));
         }else if(carburantc =="Diesel"){
             total = Math.round((((2729 * Math.abs(consomoyc.value)) /100 )* Math.abs(nbkmc.value)) / Math.abs(nbper.value));
@@ -135,46 +133,54 @@ btn.addEventListener('click',() => {
         }else if(carburantc =="Biodiesel"){
             total = Math.round((((2472 * Math.abs(consomoyc.value)) /100 )* Math.abs(nbkmc.value)) / Math.abs(nbper.value));
         }else if(carburantc =="Hybride"){
-            total = Math.round((200 * (Math.abs(consomoyc.value) * Math.abs(nbkmc.value)) / Math.abs(nbper.value)));
+            //on peut prendre l'hypothèse qu'on émet 30% de CO2 en moins qu'une voiture essence.
+            total = Math.round(((((2317 * Math.abs(consomoyv.value)) /100 )* Math.abs(nbkmv.value))*0.7) / Math.abs(nbper.value));
         }
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
-        if (totalan < 2){
-        document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+        if (totalan < 3){
+        document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').style.color = "red";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
-        
+    //Selection du moyen de transport : Bus  
     } else if (selection == 'Bus'){
         total = Math.round(Math.abs(nbkmb.value * 104));
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
-        if (totalan < 2){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)";
+        if (totalan < 3){
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').style.color = "red";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
+
+    //Selection du moyen de transport : Train
     } else if (selection == 'Train'){
         total = Math.round(Math.abs(nbkmt.value * 4,7));
         document.querySelector('#total').innerHTML = total;
         totalan = parseFloat(total * 195 * 2 * 0.000001).toFixed(3);
         document.querySelector('#totalan').innerHTML = totalan;
-        reste = parseFloat(Math.abs(2 - totalan)).toFixed(3);
+        reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
-        if (totalan < 2){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+        if (totalan < 3){
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
         } else{
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 2 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').style.color = "red";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
         }
 
+
+    //Selection du moyen de transport : Velo ou à pied
     } else if (selection == 'Velo_pied') { 
         document.querySelector('#total').style.display="none";
         document.querySelector('#total_labelan').style.display="none";
@@ -182,6 +188,8 @@ btn.addEventListener('click',() => {
         document.querySelector('#totalan').style.display="none";
         document.querySelector('#commentaire').innerHTML = 'Genial ! ton impact CO2 est nul, et en plus tu auras un super fessier pour cet été !!!';
 
+        
+    // alert en cas de non selection du moyen de transport
     }else if (selection == ''){
         alert('Veuillez choisir un moyen de transport');
         document.querySelector('#total').style.display="none";

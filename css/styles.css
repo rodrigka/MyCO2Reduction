@@ -193,6 +193,20 @@ body{
     background:rgb(237, 245, 238);
 }
 
+/* Pourquoi */
+
+.card_important{
+    text-align: center;
+    font-size: larger;
+    text-decoration: underline var(--green1);
+}
+
+#row-pourquoi a{
+    position: relative;
+    top: 10px; left: 350px;
+    justify-content:center;
+}
+
 /* Articles */
 
 .articles{
@@ -381,11 +395,22 @@ body{
 .aboutUs__history{
     font-size: 21px;
     font-weight: 300;
+    text-align: justify;
+    color: whitesmoke;
 }
 
 .aboutUs__info{
-    width: 70%;
+    width: 90%;
     color: white;
+}
+
+.aboutUs__name{
+    font-size: 16px;
+    line-height: 1em;
+}
+
+.aboutUs__position{
+    font-size: 12px;
 }
 
 .logo--picture{
@@ -449,6 +474,10 @@ body{
     border-radius: 6px;
 }
 
+#consomoyv, #consomoyc, #nbkmc, #nbkmv, #nbkmb, #nbkmt{
+    width: 100%;
+}
+
 .card-transport, .card-voiture, .card-covoiturage, .card-bus, .card-train{
     text-align: left;
     width: 90%;
@@ -462,6 +491,45 @@ body{
     display:none;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 .result{
     color:#238017;
 }
@@ -470,14 +538,15 @@ body{
 
 .check{
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-evenly;
     flex-wrap: wrap;
     margin: 0 auto;
+    width: 110%;
+    align-items: center;
 }
 
 .check__item{
     width: 30%;
-    padding-right: 10px;
     display: flex;
     border-right: 2px solid var(--blue);
 }
@@ -491,7 +560,7 @@ body{
     margin-right: 20px;
     color: #fff;
     border-radius: 50%;
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .check__number{
@@ -672,256 +741,6 @@ body{
 }
 
 /*
- *Adaptiation a plusieurs écrans à finir
+ *Adaptiation a plusieurs écrans à réaliser
  */
 
-@media screen and (max-width:900px){
-    .mockup{
-        width: 600px;
-        height: auto;
-    }
-
-    .title{
-        font-size: 50px;
-    }
-
-    .copy{
-        font-size: 22px;
-    }
-
-    .cta{
-        padding: 15px 22px;
-    }
-
-    .container-cards{
-        justify-content: space-evenly;
-    }
-
-    .services .card{
-        width: 45%;
-    }
-
-    .background{
-        width: 52%;
-    }
-
-    .card{
-        width: 42%;
-    }
-
-    .info-container{
-        justify-content: space-evenly;
-    }
-
-    .aboutUs__card{
-        width: 45%;
-    }
-
-    .check__item{
-        width: 45%;
-        margin-bottom: 35px;
-    }
-
-    .newsletter{
-        width: 80%;
-    }
-
-    .download{
-        width: 100%;
-    }
-
-    .download__app{
-        justify-content: space-between;
-    }
-
-    .download__item{
-        width: 45%;
-    }
-
-    .get-email{
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .socialmedia__icon{
-        font-size: 18px;
-    }
-
-    .socialmedia__legend{
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width:700px){
-    main .container,
-    footer .container{
-        padding: 60px 0;
-    }
-
-    .nav__container{
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-
-    .nav__hero{
-        height: auto;
-    }
-
-    .logo{
-        padding: 15px 0 ;
-        text-align: center;
-    }
-
-    .links{
-        padding-bottom: 10px;
-        text-align: center;
-    }
-
-    .link{
-        padding: 7px 10px;
-    }
-
-
-    .hero__main{
-        flex-direction: column-reverse;
-        justify-content: flex-end;
-        min-height: 70px;
-        height: auto;
-        padding: 30px 0;
-    }
-
-    .hero__textos{
-        width: 100%;
-        text-align: center;
-    }
-
-    .mockup{
-        width: 60%;
-        margin-bottom: 20px;
-    }
-
-    .title{
-        font-size: 35px;
-    }
-
-    .copy{
-        font-size: 20px;
-    }
-
-    .subtitle{
-        font-size: 35px;
-        text-align: center;
-    }
-
-    .copy__section{
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .services .card{
-        width: 80%;
-    }
-
-    .container-bg{
-        justify-content: space-evenly;
-    }
-
-    .card{
-        margin-bottom: 40px;
-        width: 65%;
-    }
-
-    .card__title{
-        font-size: 35px;
-    }
-
-    .card__button{
-        width: 100%;
-    }
-
-    .background{
-        width: 65%;
-        margin-bottom: 40px;
-    }
-
-    .background__copy{
-        display: none;
-    }
-
-    .aboutUs__card{
-        width: 65%;
-    }
-
-    .aboutUs__name{
-        font-size: 20px;
-    }
-
-    .container--modifier{
-        width: 80%;
-    }
-
-    .item__contact{
-        width: 100%;
-        padding: 30px 0;
-    }
-}
-
-@media screen and (max-width:500px){
-    .mockup{
-        width: 80%;
-        margin-bottom: 15px;
-    }
-
-    .services .card{
-        width: 95%;
-    }
-
-    .card{
-        width: 95%;
-    }
-
-    .background{
-        width: 95%;
-    }
-
-    .aboutUs__card{
-        width: 95%;
-    }
-
-    .aboutUs__history{
-        font-size: 20px;
-    }
-
-    .container--modifier{
-        width: 90%;
-    }
-
-    .newsletter{
-        width: 100%;
-        display: none;
-    }
-
-    .newsletter--modifier{
-        display: block;
-    }
-
-    .check__item{
-        width: 100%;
-        border: none;
-        padding: none;
-        justify-content: center;
-    }
-
-    .download__item{
-        width: 49%;
-    }
-
-    .download__title{
-        font-size: 16px;
-    }
-
-    .download__logo{
-        font-size: 30px;
-    }
-}
