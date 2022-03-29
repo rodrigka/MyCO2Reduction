@@ -105,10 +105,10 @@ btn.addEventListener('click',() => {
 
         // Contenu du commentaire en fonction des tonnes de CO2 par an.
         if (totalan < 3){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite 😓"
         }
 
     //Selection du moyen de transport : Covoiturage
@@ -142,10 +142,10 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
-        document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+        document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite 😓"
         }
 
     //Selection du moyen de transport : Bus  
@@ -157,10 +157,10 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite 😓"
         }
 
 
@@ -173,10 +173,10 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
-            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite :/."
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite 😓"
         }
 
 
@@ -186,7 +186,7 @@ btn.addEventListener('click',() => {
         document.querySelector('#total_labelan').style.display="none";
         document.querySelector('#total_label').style.display="none";
         document.querySelector('#totalan').style.display="none";
-        document.querySelector('#commentaire').innerHTML = 'Genial ! ton impact CO2 est nul, et en plus tu auras un super fessier pour cet été !!!';
+        document.querySelector('#commentaire').innerHTML = 'Genial ! ton impact CO2 est nul, et en plus tu auras un super fessier pour cet été !!! 😄';
 
         
     // alert en cas de non selection du moyen de transport
