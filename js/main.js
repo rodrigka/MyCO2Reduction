@@ -78,7 +78,7 @@ btn.addEventListener('click',() => {
     if (selection == 'Voiture') { 
         if(carburantv == ''){
             //Cacher les resultats : pas de selection sur le carburant
-            alert("Veuillez selectionner un moyen de transport.")
+            alert("Veuillez selectionner un carburant.")
             document.querySelector('#total').style.display="none"
             document.querySelector('#total_labelan').style.display="none";
             document.querySelector('#total_label').style.display="none";
@@ -105,6 +105,7 @@ btn.addEventListener('click',() => {
 
         // Contenu du commentaire en fonction des tonnes de CO2 par an.
         if (totalan < 3){
+            document.querySelector('#commentaire').style.color = "green";
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
@@ -142,7 +143,8 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
-        document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
+            document.querySelector('#commentaire').style.color = "green";
+            document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Vous avez donc dépassé la limite 😓"
@@ -157,6 +159,7 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
+            document.querySelector('#commentaire').style.color = "green";
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : "+ reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
@@ -173,6 +176,7 @@ btn.addEventListener('click',() => {
         reste = parseFloat(Math.abs(3 - totalan)).toFixed(3);
 
         if (totalan < 3){
+            document.querySelector('#commentaire').style.color = "green";
             document.querySelector('#commentaire').innerHTML = "L'objectif mondial est de 3 tonnes d'emissions par habitant. Il te reste : " + reste +" tonnes pour tes autres consommations (achats, electicité...)😄";
         } else{
             document.querySelector('#commentaire').style.color = "red";
